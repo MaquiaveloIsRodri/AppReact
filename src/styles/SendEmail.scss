@@ -4,6 +4,13 @@
     display: grid;
     place-items: center;
 }
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: var(--md);
+}
 
 .form-container {
     display: grid;

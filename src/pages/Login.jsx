@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import '@styles/Login.scss';
-import logo from '@logos/logo_yard_sale.svg'
 
 const Login = () => {
 	const form = useRef(null);
@@ -18,7 +17,6 @@ const Login = () => {
 	return (
 		<div className="Login">
 			<div className="Login-container">
-				<img src={logo} alt="logo" className="logo" />
 				<form action="/" className="form" ref={form}>
 					<label htmlFor="email" className="label">Email address</label>
 					<input type="text" name="email" placeholder="email@email.com" className="input input-email" />
@@ -29,13 +27,13 @@ const Login = () => {
 						className="primary-button login-button">
 						Log in
 					</button>
-					<a href="/">Forgot my password</a>
+					<a href="/password-recovery">Forgot my password</a>
 				</form>
-				<button
-					className="secondary-button signup-button"
-				>
-					Sign up
-				</button>
+				<a
+					type='submit'
+					className='secondary-button signup-button text'
+					href='/sign-up'
+					>Sign up</a>
 			</div>
 		</div >
 	);

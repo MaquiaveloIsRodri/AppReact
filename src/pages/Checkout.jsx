@@ -1,9 +1,12 @@
-import React from 'react';
-import OrderItem from '../components/OrderItem';
-import Menu from '../components/Menu';
+import React , {useContext} from 'react';
 import '../styles/Checkout.scss';
+import AppContext from '../context/AppContext';
 
 const Checkout = () => {
+	const {state} = useContext(AppContext)
+	const day =new Date().getDate()
+	const month = new Date().getMonth()
+	const year = new Date().getFullYear()
 	return (
 		<div className="Checkout">
 			<div className="Checkout-container">
@@ -11,13 +14,14 @@ const Checkout = () => {
 				<div className="Checkout-content">
 					<div className="order">
 						<p>
-							<span>03.25.21</span>
+							<span>{month + 1}.{day}.{year}</span>
 							<span>6 articles</span>
 						</p>
+						
 						<p>$560.00</p>
 					</div>
+					<button className='primary-button login-button'>To Pay</button>
 				</div>
-				<OrderItem />
 			</div>
 		</div>
 	);

@@ -4,18 +4,23 @@ import Menu from '@components/Menu'
 import menu from '@icons/icon_menu.svg'
 import logo from '@logos/logo_yard_sale.svg'
 import shoppingCard from '@icons/icon_shopping_cart.svg'
-import MyOrder from '../containers/MyOrders'
+import MyOrder from '@containers/MyOrders'
+import MobileMenu from '@components/MobileMenu'
 import AppContext from '../context/AppContext';
 const Header = () => {
     const [toggle, setToggle] = useState(false);
-    const [toggleOrders ,setToggleOrders] = useState(false);
-    const {state} = useContext(AppContext)
+    //const [toggleOrders ,setToggleOrders] = useState(false);
     const handleClick = () => {
         setToggle(!toggle)
     }
+    const {state , clickShowMenu,showMenu,toggleOrders,clickShowOrders} = useContext(AppContext)
     return (
         <nav>
-            <img src={menu} alt="menu" className="menu" />
+            <img src={menu} 
+            alt="menu"
+            className="menu"
+            onClick={()=>clickShowMenu()}
+            />
             <div className="navbar-left">
                 <img src={logo} alt="logo" className="logo" />
                 <ul>
@@ -47,9 +52,9 @@ const Header = () => {
                     >
                         platzi@example.com
                     </li>
-                    <li 
+                    <li
                     className="navbar-shopping-cart"
-                    onClick={()=>setToggleOrders(!toggleOrders)}
+                    onClick={()=>clickShowOrders()}
                     >
                         <img src={shoppingCard} alt="shopping cart" />
                         {state.cart.length >0 ? <div>{state.cart.length}</div> :null}
@@ -57,6 +62,7 @@ const Header = () => {
                 </ul>
             </div>
             {toggle && <Menu/>}
+            {showMenu && <MobileMenu/>}
             {toggleOrders && <MyOrder />}
         </nav>
     );

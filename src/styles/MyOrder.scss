@@ -4,7 +4,7 @@
 	width: 360px;
 	padding: 24px;
 	box-sizing: border-box;
-	position: absolute;
+	position: fixed;
 	right: 0;
 	background-color: white;
 	top: 60px;
@@ -12,7 +12,9 @@
 	border-radius: 6px;
 	border: 1px solid var(--very-light-pink);
 	overflow-y:scroll;
-	overflow-x: hidden ;
+	overflow-x: hidden;
+	transition: 1s ease;
+	animation: swipeLeft 0.1s ease forwards;
 }
 .title-container {
 	display: flex;
@@ -24,6 +26,9 @@
 .title {
 	font-size: var(--lg);
 	font-weight: bold;
+}
+.title-arrow{
+	cursor: pointer;
 }
 .order {
 	display: grid;
@@ -48,7 +53,11 @@
 	font-weight: bold;
 }
 
-.primary-button {
+.Order-Button {
+	display: flex;
+	text-decoration: none;
+	justify-content: center;
+	align-items: center;
 	background-color: var(--hospital-green);
 	border-radius: 8px;
 	border: none;
@@ -63,4 +72,10 @@
 	.MyOrder {
 		width: 100%;
 	}
+}
+@keyframes swipeLeft {
+	0%{
+		transform: translateX(50px);
+	}
+	100% {transform: translateX(-10px);}
 }

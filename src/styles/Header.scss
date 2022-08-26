@@ -11,6 +11,7 @@ nav {
 }
 .logo {
 	width: 100px;
+	position: absolute;
 }
 .navbar-left ul,
 .navbar-right ul {
@@ -23,6 +24,8 @@ nav {
 }
 .navbar-left {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .navbar-left ul {
 	margin-left: 12px;
@@ -47,6 +50,7 @@ nav {
 }
 .navbar-shopping-cart {
 	position: relative;
+	cursor: pointer;
 }
 .navbar-shopping-cart div {
 	width: 16px;

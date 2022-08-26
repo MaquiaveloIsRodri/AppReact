@@ -11,7 +11,6 @@ import Checkout from '../pages/Checkout'
 import CreateAccount from '../pages/CreateAccount'
 import MyAccount from '../pages/MyAccount'
 import NewPassword from '../pages/NewPassword'
-import Orders from '../pages/Orders'
 import useInitialState from '../hooks/useInitialState';
 import '../styles/global.css'
 
@@ -29,8 +28,7 @@ const App = () => {
                         <Route path="/new-password" element={<NewPassword />} />
                         <Route path="/account" element={<MyAccount />} />
                         <Route path="/sign-up" element={<CreateAccount />} />
-                        <Route path="/checkout" element={<Checkout />} />
-                        <Route path="/orders" element={<Orders />} />
+                        <Route path="/checkout" element={<Checkout/>} />
                         <Route path='*' element={<NotFound />} />
                     </Routes>
                 </Layout>

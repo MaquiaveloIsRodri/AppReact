@@ -5,16 +5,20 @@ import AppContext from '../context/AppContext'
 import icon from '@icons/flechita.svg'
 
 const MyOrder = () => {
-	const { state } = useContext(AppContext)
-	const sumTotal=()=>{
-		const reducer = (accu , value)=> accu + value.price
-		const sum = state.cart.reduce(reducer,0)
+	const { state, clickCloseOrder } = useContext(AppContext)
+	const sumTotal = () => {
+		const reducer = (accu, value) => accu + value.price
+		const sum = state.cart.reduce(reducer, 0)
 		return sum
 	}
 	return (
 		<aside className="MyOrder">
 			<div className="title-container">
-				<img src={icon} alt="arrow" />
+				<img
+					src={icon} alt="arrow"
+					className='title-arrow'
+					onClick={() => clickCloseOrder()}
+				/>
 				<p className="title">My order</p>
 			</div>
 			<div className="my-order-content">
@@ -32,9 +36,12 @@ const MyOrder = () => {
 					</p>
 					<p>$ {sumTotal()}</p>
 				</div>
-				<button className="primary-button">
+				<a
+					className="Order-Button"
+					href="/checkout"
+				>
 					Checkout
-				</button>
+				</a>
 			</div>
 		</aside>
 	);

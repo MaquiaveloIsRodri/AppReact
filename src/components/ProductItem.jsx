@@ -19,7 +19,11 @@ const ProductItem = ({product}) => {
 				<figure
 				onClick={()=>handleClick(product)}
 				>
-					<img src={add} alt="" />
+					<img 
+					src={add} 
+					alt="AddItem" 
+					className='Product-add-icon'
+					/>
 				</figure>
 			</div>
 		</div>
