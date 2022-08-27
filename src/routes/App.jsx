@@ -1,16 +1,16 @@
 import React from 'react'
 import AppContext from '../context/AppContext';
-import Layout from '../containers/Layout';
+import Layout from '@containers/Layout';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Login from '../pages/login';
-import Home from '../pages/Home'
-import NotFound from '../pages/NotFound'
-import RecoveryPassword from '../pages/RecoveryPassword'
-import SendEmail from '../pages/SendEmail'
-import Checkout from '../pages/Checkout'
-import CreateAccount from '../pages/CreateAccount'
-import MyAccount from '../pages/MyAccount'
-import NewPassword from '../pages/NewPassword'
+import Login from '@pages/login';
+import Home from '@pages/Home'
+import NotFound from '@pages/NotFound'
+import RecoveryPassword from '@pages/RecoveryPassword'
+import SendEmail from '@pages/SendEmail'
+import Checkout from '@pages/Checkout'
+import CreateAccount from '@pages/CreateAccount'
+import MyAccount from '@pages/MyAccount'
+import NewPassword from '@pages/NewPassword'
 import useInitialState from '../hooks/useInitialState';
 import '../styles/global.css'
 
