@@ -18,7 +18,7 @@ const App = () => {
     const initialState = useInitialState()
     return (
         <AppContext.Provider value={initialState}>
-            <BrowserRouter>
+            <BrowserRouter >
                 <Layout>
                     <Routes>
                         <Route path="/" element={<Home />} />
@@ -28,7 +28,7 @@ const App = () => {
                         <Route path="/new-password" element={<NewPassword />} />
                         <Route path="/account" element={<MyAccount />} />
                         <Route path="/sign-up" element={<CreateAccount />} />
-                        <Route path="/checkout" element={<Checkout/>} />
+                        <Route path="https://630961f17ca5610aa69841c3--delightful-alfajores-c7b6f2.netlify.app/checkout" element={<Checkout/>} />
                         <Route path='*' element={<NotFound />} />
                     </Routes>
                 </Layout>
